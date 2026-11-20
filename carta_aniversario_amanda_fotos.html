@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Amanda — Feliz 22 Anos, Meu Amor</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fdfbfb 0%, #f4ebe8 50%, #e9d8d6 100%);
+      color: #3a2e2e;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      line-height: 1.85;
+    }
+
+    .letter-container {
+      background: #fffdfb;
+      max-width: 780px;
+      width: 100%;
+      padding: 64px 58px;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(74, 46, 46, 0.12), 0 4px 12px rgba(74, 46, 46, 0.05);
+      border: 1px solid rgba(185, 138, 138, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #b86b77, #d99b9b, #b86b77);
+    }
+
+    .date-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #9e6b6b;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #6b3838;
+      text-align: center;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #8c5e5e;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: #d4a5a5;
+      margin: 0 auto 36px auto;
+    }
+
+    /* Estilo da Metadinha (img1.png e img2.png) */
+    .metadinha-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto 42px auto;
+    }
+
+    .metadinha-pair {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      background: #fff8f7;
+      padding: 12px;
+      border-radius: 18px;
+      border: 1px solid #e6caca;
+      box-shadow: 0 10px 26px rgba(107, 56, 56, 0.1);
+      position: relative;
+    }
+
+    .metadinha-pair img {
+      width: 145px;
+      height: 145px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .metadinha-pair img:first-child {
+      border-radius: 12px 0 0 12px;
+      border-right: 1px dashed rgba(184, 107, 119, 0.45);
+    }
+
+    .metadinha-pair img:last-child {
+      border-radius: 0 12px 12px 0;
+    }
+
+    .metadinha-heart {
+      position: absolute;
+      background: #fffdfb;
+      color: #b86b77;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.95rem;
+      border: 1px solid #e6caca;
+      box-shadow: 0 4px 10px rgba(107, 56, 56, 0.12);
+    }
+
+    .photo-caption {
+      font-style: italic;
+      font-size: 1.05rem;
+      color: #8c5e5e;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.32rem;
+      margin-bottom: 24px;
+      text-align: justify;
+      color: #382c2c;
+    }
+
+    .highlight-quote {
+      margin: 36px 0;
+      padding: 24px 30px;
+      background: #faf3f2;
+      border-left: 3px solid #b86b77;
+      border-radius: 0 10px 10px 0;
+      font-style: italic;
+      font-size: 1.38rem;
+      color: #5e3131;
+      text-align: left;
+    }
+
+    /* Polaroids intercaladas no meio do texto */
+    .polaroid-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 38px 0;
+    }
+
+    .polaroid-card {
+      background: #ffffff;
+      padding: 12px 12px 18px 12px;
+      border-radius: 10px;
+      border: 1px solid #edd9d9;
+      box-shadow: 0 10px 24px rgba(74, 46, 46, 0.08);
+      transition: transform 0.25s ease;
+    }
+
+    .polaroid-card:nth-child(odd) {
+      transform: rotate(-1.2deg);
+    }
+
+    .polaroid-card:nth-child(even) {
+      transform: rotate(1.2deg);
+    }
+
+    .polaroid-card:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .polaroid-card img {
+      width: 100%;
+      aspect-ratio: 4 / 4;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .polaroid-card span {
+      display: block;
+      text-align: center;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: #7d5252;
+      margin-top: 10px;
+    }
+
+    .promises {
+      margin: 36px 0;
+      padding: 28px 34px;
+      background: #fff8f7;
+      border: 1px solid #edd5d5;
+      border-radius: 12px;
+    }
+
+    .promises h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #8f4d4d;
+      margin-bottom: 18px;
+    }
+
+    .promises ul {
+      list-style: none;
+    }
+
+    .promises li {
+      font-size: 1.24rem;
+      margin-bottom: 12px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .promises li::before {
+      content: "♥";
+      position: absolute;
+      left: 0;
+      color: #b86b77;
+      font-size: 0.95rem;
+      top: 2px;
+    }
+
+    .signature-block {
+      margin-top: 48px;
+      text-align: right;
+    }
+
+    .signature-block p {
+      text-align: right;
+      margin-bottom: 6px;
+      font-size: 1.3rem;
+    }
+
+    .signature-name {
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 600;
+      color: #6b3838;
+      margin-top: 8px;
+    }
+
+    .heart-footer {
+      text-align: center;
+      margin-top: 42px;
+      color: #b86b77;
+      font-size: 1.3rem;
+      letter-spacing: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .letter-container {
+        padding: 40px 24px;
+      }
+      h1 {
+        font-size: 1.95rem;
+      }
+      p {
+        font-size: 1.18rem;
+        text-align: left;
+      }
+      .metadinha-pair img {
+        width: 125px;
+        height: 125px;
+      }
+      .polaroid-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="letter-container">
+    <div class="date-tag">19 de Novembro • Seus 22 Anos</div>
+    <h1>Feliz Aniversário, Amanda</h1>
+    <div class="subtitle">Uma carta escrita com toda a verdade do meu coração para celebrar os seus 22 anos</div>
+    <div class="divider"></div>
+
+    <!-- Metadinha: img1.png e img2.png juntas -->
+    <div class="metadinha-wrapper">
+      <div class="metadinha-pair">
+        <img src="img1.png" alt="Nossa metadinha - Parte 1">
+        <div class="metadinha-heart">♥</div>
+        <img src="img2.png" alt="Nossa metadinha - Parte 2">
+      </div>
+      <div class="photo-caption">Duas metades que só fazem sentido juntas</div>
+    </div>
+
+    <p>Amanda, meu amor,</p>
+
+    <p>
+      Eu começo esta carta sem nenhuma tentativa de me defender, sem nenhuma desculpa pronta e sem querer diminuir o tamanho do meu erro. Hoje é o seu aniversário — o dia em que você completa 22 anos e o dia em que o mundo ficou muito mais bonito porque você nasceu — e eu falhei em lembrar logo de cara da data de quem mais me ama, mais cuida de mim e mais faz diferença na minha vida inteira.
+    </p>
+
+    <p>
+      Ver as suas lágrimas hoje doeu em um lugar fundo dentro de mim, porque eu sei exatamente o que elas significam. Você não chorou apenas por causa de um número no calendário. Você chorou porque, no dia dos seus 22 anos, você merecia se sentir celebrada, esperada, lembrada e colocada no centro de tudo por quem você escolheu amar todos os dias. E, por um apagão meu na correria da vida, eu deixei passar o momento de te mostrar isso logo no primeiro instante.
+    </p>
+
+    <!-- Bloco 1 de fotos: img3.jpg e img4.jpg -->
+    <div class="polaroid-row">
+      <figure class="polaroid-card">
+        <img src="img3.jpg" alt="Lembrança 1">
+        <span>O sorriso mais bonito do meu mundo</span>
+      </figure>
+      <figure class="polaroid-card">
+        <img src="img4.jpg" alt="Lembrança 2">
+        <span>Cada instante ao seu lado vale ouro</span>
+      </figure>
+    </div>
+
+    <div class="highlight-quote">
+      “Eu perdi a data no relógio e no calendário, Amanda, mas nunca — nem por um segundo — perdi você dentro do meu coração.”
+    </div>
+
+    <p>
+      Quando eu paro para pensar em tudo o que você é para mim, o peso desse meu vacilo fica ainda mais claro. Você é a pessoa que está comigo nos dias bons e nos dias difíceis, quem me apoia quando as coisas apertam, quem torce pelas minhas conquistas e quem me dá abrigo quando eu preciso respirar. Você me ama com uma entrega rara, verdadeira e inteira — e a última coisa que eu jamais gostaria de fazer na vida é fazer você duvidar, nem por um minuto, do quanto você é amada de volta.
+    </p>
+
+    <!-- Bloco 2 de fotos: img5.jpg e img6.jpg -->
+    <div class="polaroid-row">
+      <figure class="polaroid-card">
+        <img src="img5.jpg" alt="Lembrança 3">
+        <span>Meu lugar favorito sempre vai ser com você</span>
+      </figure>
+      <figure class="polaroid-card">
+        <img src="img6.jpg" alt="Lembrança 4">
+        <span>22 anos iluminando tudo ao seu redor</span>
+      </figure>
+    </div>
+
+    <p>
+      O meu esquecimento de hoje não foi falta de amor, não foi falta de importância e nunca foi indiferença. Foi uma falha humana minha, imperdoável no momento, mas que jamais vai apagar o tamanho do lugar que você ocupa na minha história. Se eu pudesse voltar algumas horas no tempo, eu teria sido o primeiro a te abraçar, a te desejar feliz 22 anos olhando nos seus olhos e a fazer você sorrir desde o primeiro minuto do seu dia.
+    </p>
+
+    <div class="promises">
+      <h2>O que eu quero te prometer nos seus 22 anos</h2>
+      <ul>
+        <li>Não deixar a correria do dia a dia engolir os gestos que fazem você se sentir especial, lembrada e amada.</li>
+        <li>Celebrar você não apenas hoje, mas nos pequenos detalhes de todos os dias comuns que temos juntos.</li>
+        <li>Transformar o resto deste dia no começo de uma fase em que eu esteja ainda mais presente, atento e inteiro ao seu lado.</li>
+      </ul>
+    </div>
+
+    <!-- Bloco 3 de fotos: img7.jpg e img8.jpg -->
+    <div class="polaroid-row">
+      <figure class="polaroid-card">
+        <img src="img7.jpg" alt="Lembrança 5">
+        <span>Nossa história ainda tem muito para viver</span>
+      </figure>
+      <figure class="polaroid-card">
+        <img src="img8.jpg" alt="Lembrança 6">
+        <span>Feliz aniversário, minha vida</span>
+      </figure>
+    </div>
+
+    <p>
+      Eu não quero que os seus 22 anos comecem marcados pelo erro que eu cometi hoje, mas sim pela certeza de que eu estou aqui, assumindo a minha falha de peito aberto, pedindo o seu perdão e disposto a fazer o que estiver ao meu alcance para ver o seu sorriso voltar.
+    </p>
+
+    <p>
+      Obrigado por existir, por ser exatamente quem você é, por ter o coração mais bonito que eu já conheci e por caminhar ao meu lado. Que este novo ciclo dos seus 22 anos traga tudo aquilo que você merece de melhor — e que eu tenha a honra de estar do seu lado para construir e celebrar cada pedacinho disso com você.
+    </p>
+
+    <p>
+      Feliz 22 anos, Amanda. Me perdoa por hoje, e deixa eu te amar ainda melhor daqui para frente.
+    </p>
+
+    <div class="signature-block">
+      <p>Com todo o meu amor, hoje e sempre,</p>
+      <div class="signature-name">Felipe</div>
+    </div>
+
+    <div class="heart-footer">♥ ♥ ♥</div>
+  </article>
+</body>
+</html>
